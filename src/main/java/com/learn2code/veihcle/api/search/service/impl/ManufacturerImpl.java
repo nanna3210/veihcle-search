@@ -2,12 +2,14 @@ package com.learn2code.veihcle.api.search.service.impl;
 
 import com.learn2code.veihcle.api.search.dao.ManufactureDao;
 import com.learn2code.veihcle.api.search.entity.Manufacturer;
+import com.learn2code.veihcle.api.search.exception.ManufacturerNotFoundException;
 import com.learn2code.veihcle.api.search.service.ManufacturerService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 public class ManufacturerImpl implements ManufacturerService {
@@ -29,8 +31,8 @@ public class ManufacturerImpl implements ManufacturerService {
     }
 
     @Override
-    public Manufacturer findManufacturerById(Integer id) {
-        return manufactureDao.findById(id).orElseThrow(() -> new NoSuchElementException("no Such record Found"));
+    public Optional<Manufacturer> findManufacturerById(Integer id) {
+        return manufactureDao.findById(id);
     }
 
 

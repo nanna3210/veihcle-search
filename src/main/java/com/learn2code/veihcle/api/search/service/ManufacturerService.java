@@ -4,6 +4,7 @@ import com.learn2code.veihcle.api.search.entity.Manufacturer;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 public interface ManufacturerService {
@@ -12,6 +13,6 @@ public interface ManufacturerService {
 
         List<Manufacturer> findAllManufacturer();
 
-        Manufacturer findManufacturerById(Integer id);
+        Optional<Manufacturer> findManufacturerById(Integer id);
 
 }
