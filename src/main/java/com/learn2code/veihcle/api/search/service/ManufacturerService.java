@@ -12,4 +12,6 @@ public interface ManufacturerService {
 
         List<Manufacturer> findAllManufacturer();
 
+        Manufacturer findManufacturerById(Integer id);
+
 }
